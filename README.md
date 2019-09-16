@@ -17,6 +17,7 @@ TG_BOT_DB_HOST="localhost"
 TG_BOT_DB_PORT=27017
 EOF
 
+sudo service mongod start;
 cargo run;
 ```
 
