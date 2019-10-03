@@ -26,3 +26,9 @@ NOTE: **BotFather** must set  **inline-mode** to `off` and **group-privacy** to 
 ## Usage
 
 Any user can upvote by replying messages with the `TG_BOT_TAG`, e.g. 🥭, and check most popular messages with the `/top` command, e.g, `/top 10 7days`.
+
+## Debug
+
+```
+RUST_LOG=tg_rs_upvote_bot cargo run
+```
