@@ -70,7 +70,7 @@ impl Handler {
         );
         log::debug!("/top {} {}", top, days);
 
-        let candidates: Vec<Candidate> = self.storage.find(top, days);
+        let candidates: Vec<Candidate> = self.storage.find(chat_id, top, days);
         for candidate in candidates.iter() {
             let method =
                 SendMessage::new(chat_id, &self.reply).reply_to_message_id(candidate.message_id);
@@ -156,12 +156,13 @@ impl Storage {
             .expect("Failed to save.");
     }
 
-    fn find(&self, top: i64, days: i64) -> Vec<Candidate> {
+    fn find(&self, group_id: i64, top: i64, days: i64) -> Vec<Candidate> {
         let mut candidates: Vec<Candidate> = Vec::new();
 
         let now = Utc::now();
         let from = now - Duration::days(days);
         let query = doc! {
+            "group_id": group_id,
             "created": doc! {
                 "$gte": Bson::from(from),
                 "$lt": Bson::from(now) },
