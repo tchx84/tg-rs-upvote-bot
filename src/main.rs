@@ -94,16 +94,17 @@ impl Handler {
             None => return,
         };
 
-        let (group, user) = match &replied.kind {
-            MessageKind::Group { chat, from } => (chat, from),
+        let (group_id, user_id) = match &replied.kind {
+            MessageKind::Group { chat, from } => (chat.id, from.id),
+            MessageKind::Supergroup { chat, from } => (chat.id, from.id),
             _ => return,
         };
 
-        log::debug!("vote for {} {} {}", replied.id, user.id, group.id);
+        log::debug!("vote for {} {} {}", replied.id, user_id, group_id);
         let candidate = Candidate {
             message_id: replied.id,
-            user_id: user.id,
-            group_id: group.id,
+            user_id: user_id,
+            group_id: group_id,
         };
         self.storage.save(candidate);
     }
