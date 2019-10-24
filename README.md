@@ -3,6 +3,7 @@
 A (prototype) telegram bot to upvote and query top messages from group chats.
 
 ## Setup
+Never used Rust, MongoDB or created a Telegram Bot? Read the [quickstart guide](https://github.com/tchx84/tg-rs-upvote-bot/blob/master/quickstart.md).
 
 ```
 git clone https://github.com/tchx84/tg-rs-upvote-bot.git;
