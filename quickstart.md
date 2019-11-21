@@ -14,6 +14,7 @@ To create a bot, you'll have to chat with the [Botfather](https://t.me/botfather
 To start the conversation, press the start button.
 The Botfather then presents you a list of options, to create a new bot, choose `/newbot`.
 Now you can give your bot a name and a username.
+Also make sure to set  **inline-mode** to `off` and **group-privacy** to `off`.
 Now you have to run `/token` to get your token.
 That's it, you're ready to start the bot!
 
