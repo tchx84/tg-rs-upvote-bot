@@ -3,25 +3,7 @@
 A (prototype) telegram bot to upvote and query top messages from group chats.
 
 ## Setup
-
-```
-git clone https://github.com/tchx84/tg-rs-upvote-bot.git;
-cd tg-rs-upvote-bot;
-
-cat > .env << "EOF"
-TG_BOT_TOKEN="TOKEN"
-TG_BOT_TAG="🥭"
-TG_BOT_REPLY="☝"
-TG_BOT_DB_NAME="upvotes"
-TG_BOT_DB_HOST="localhost"
-TG_BOT_DB_PORT=27017
-EOF
-
-sudo service mongod start;
-cargo run;
-```
-
-NOTE: **BotFather** must set  **inline-mode** to `off` and **group-privacy** to `off`.
+Never used Rust, MongoDB or created a Telegram Bot? Read the [quickstart guide](https://github.com/tchx84/tg-rs-upvote-bot/blob/master/quickstart.md).
 
 ## Usage
 
