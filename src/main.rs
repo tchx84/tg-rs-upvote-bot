@@ -177,7 +177,7 @@ impl Storage {
         let cursor = collection.find(Some(query), Some(options)).unwrap();
         for result in cursor {
             if let Ok(item) = result {
-                let candidate = bson::from_bson(Bson::Document(item)).unwrap();
+                let candidate = mongodb::from_bson(Bson::Document(item)).unwrap();
                 candidates.push(candidate);
             }
         }
